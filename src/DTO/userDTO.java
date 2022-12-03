@@ -5,7 +5,15 @@ package DTO;
 public class userDTO {
     private Integer ussn;
     private String name;
-    private String phone;
+    private String comment;
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     public Integer getUssn() {
         return ussn;
@@ -23,12 +31,5 @@ public class userDTO {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
 }

@@ -30,7 +30,7 @@ public class userDAOImpl implements userDAO{
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, userdto.getUssn());
             pstmt.setString(2, userdto.getName());
-            pstmt.setString(3,userdto.getPhone());
+            pstmt.setString(3,userdto.getComment());
 
         }finally{
             uComm.close(pstmt, conn);
@@ -53,7 +53,7 @@ public class userDAOImpl implements userDAO{
                 userDTO userdto = new userDTO();
                 userdto.setUssn(rs.getInt("ussn"));
                 userdto.setName(rs.getString("uname"));
-                userdto.setPhone(rs.getString("phone"));
+                userdto.setComment(rs.getString("comment"));
                 list.add(userdto);
             }
         }finally{
