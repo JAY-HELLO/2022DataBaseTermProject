@@ -1,6 +1,6 @@
 package DTO;
 
-//DAO는 데이터 를실어나르는 객체
+//DTO는 데이터 를실어나르는 객체
 //2018038006 이정주
 public class userDTO {
     private Integer ussn;
