@@ -24,14 +24,12 @@ public class userDAOImpl implements userDAO{
         int ret = 0;
 
         try{
-
             conn = uComm.getConnection();
-            String sql = "insert into user values (?, ?, ?)";
+            String sql = "insert into user (uname,comment) values (?, ?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, userdto.getUssn());
-            pstmt.setString(2, userdto.getName());
-            pstmt.setString(3,userdto.getComment());
-
+            pstmt.setString(1,userdto.getName());
+            pstmt.setString(2,userdto.getComment());
+            ret = pstmt.executeUpdate();
         }finally{
             uComm.close(pstmt, conn);
         }
