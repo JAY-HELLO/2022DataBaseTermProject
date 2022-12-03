@@ -59,4 +59,21 @@ public class userDAOImpl implements userDAO{
         }
         return list;
     }
+    @Override
+    public int delete(userDTO userDTO) throws SQLException{
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        int ret = 0;
+        try{
+            conn = uComm.getConnection();
+            String sql = "delete from user where ussn = ? and uname = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, userDTO.getUssn());
+            pstmt.setString(2, userDTO.getName());
+            ret = pstmt.executeUpdate();
+        }finally{
+            uComm.close(pstmt, conn);
+        }
+        return ret;
+    }
 }

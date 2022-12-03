@@ -7,5 +7,5 @@ import dbconnect.userCommon;
 public interface userDAO {
     int insert(userDTO userDTO) throws SQLException;
     List<userDTO> select() throws SQLException;
-
+    int delete(userDTO userDTO) throws  SQLException;
 }
