@@ -49,7 +49,6 @@ public class userDAOImpl implements userDAO{
             rs = pstmt.executeQuery();
             while(rs.next()){
                 userDTO userdto = new userDTO();
-                userdto.setUssn(rs.getInt("ussn"));
                 userdto.setName(rs.getString("uname"));
                 userdto.setComment(rs.getString("comment"));
                 list.add(userdto);
@@ -66,10 +65,9 @@ public class userDAOImpl implements userDAO{
         int ret = 0;
         try{
             conn = uComm.getConnection();
-            String sql = "delete from user where ussn = ? and uname = ?";
+            String sql = "delete from user where uname = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, userDTO.getUssn());
-            pstmt.setString(2, userDTO.getName());
+            pstmt.setString(1, userDTO.getName());
             ret = pstmt.executeUpdate();
         }finally{
             uComm.close(pstmt, conn);

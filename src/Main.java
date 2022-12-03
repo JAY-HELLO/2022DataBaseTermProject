@@ -19,6 +19,7 @@ public class Main {
             System.out.println("1. 사용자 생성");
             System.out.println("2. 사용자 목록보기");
             System.out.println("3. 사용자 삭제");
+            System.out.println("4. 사용자 선택");
             System.out.println("#################################################");
 
             menu = Integer.parseInt(scan.nextLine());
@@ -28,10 +29,13 @@ public class Main {
                 userController.ActionUserInsert();
 
             }else if(menu == 2){
-                userController.ActionUserSelect();
+                userController.ActionUserShow();
             }else if(menu == 3){
-                userController.ActionUserSelect();
+                userController.ActionUserShow();
                 userController.ActionUserDelete();
+            }else if(menu == 4){
+                userController.ActionUserShow();
+                userController.ActionUserSelect();
             }
         }while(true);
 
