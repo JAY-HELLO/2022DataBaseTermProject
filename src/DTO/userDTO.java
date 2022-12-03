@@ -1,7 +1,11 @@
+package DTO;
+
+//DAO는 데이터 를실어나르는 객체
+//2018038006 이정주
 public class userDTO {
-    Integer ussn;
-    String name;
-    String phone;
+    private Integer ussn;
+    private String name;
+    private String phone;
 
     public Integer getUssn() {
         return ussn;
