@@ -1,12 +1,9 @@
 import java.sql.*;
-import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import Controller.userController;
-import Controller.sinformactionController;
-import DAO.userDAOImpl;
-import DTO.userDTO;
-
+import Controller.sinformationController;
+import Controller.siinformationController;
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
@@ -14,7 +11,7 @@ public class Main {
 
         Integer menu = 0;
         do{
-            System.out.println("#################################################");
+            System.out.println("###########################################################");
             System.out.println("WITH Double_J 관심종목 프로그램에 오신 것을 환영합니다.");
             System.out.println("0. 프로그램 종료");
             System.out.println("1. 사용자 생성");
@@ -23,14 +20,13 @@ public class Main {
             System.out.println("4. 사용자 선택");
             System.out.println("5. 모든 종목 보기");
             System.out.println("6. 모든 종목 투자 정보 보기");
-            System.out.println("#################################################");
+            System.out.println("###########################################################");
 
             menu = Integer.parseInt(scan.nextLine());
             if(menu==0){
                 break;
             }else if(menu == 1){
                 userController.ActionUserInsert();
-
             }else if(menu == 2){
                 userController.ActionUserShow();
             }else if(menu == 3){
@@ -43,9 +39,9 @@ public class Main {
                     interestMain.userInterestMain(unameTemp);
                 }
             }else if(menu == 5){
-                sinformactionController.ActionSinformationSelectAll();;
+                sinformationController.ActionSinformationSelectAll();;
             }else if(menu ==6){
-
+                siinformationController.ActionSinformationJoin();
             }
         }while(true);
     }

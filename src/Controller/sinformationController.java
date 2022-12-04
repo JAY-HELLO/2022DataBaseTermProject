@@ -1,15 +1,13 @@
 package Controller;
 import DAO.sinformationDAOImpl;
 import DTO.sinformationDTO;
-import DTO.uinterestDTO;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class sinformactionController {
+public class sinformationController {
     public static void ActionSinformationSelectAll()throws SQLException {
         sinformationDAOImpl sidimpl = new sinformationDAOImpl();
-        sinformationDTO sidto = new sinformationDTO();
 
         List<sinformationDTO> result;
         result = sidimpl.selectAll();
