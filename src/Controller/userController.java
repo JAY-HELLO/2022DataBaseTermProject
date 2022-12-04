@@ -47,15 +47,17 @@ public class userController {
 
         dimpl.delete(udto);
     }
-    public static void ActionUserSelect() throws SQLException{
+    public static String ActionUserSelect() throws SQLException{
         System.out.print("원하는 사용자를 선택하세요 : \n");
         Scanner scan = new Scanner(System.in);
         String uname = scan.nextLine();
         userDAOImpl dimpl = new userDAOImpl();
         if(dimpl.findUser(uname)){
             System.out.println(uname + "사용자가 선택되었습니다.");
+            return uname;
         }else{
             System.out.println("찾으시는 사용자가 없습니다.");
+            return "no";
         }
 
     }

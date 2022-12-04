@@ -15,10 +15,6 @@ public class userDAOImpl implements userDAO{
     private userCommon uComm = userCommon.getInstance();
     private static userDAO userdao = new userDAOImpl();
 
-    private userDAO getUserdao(){
-        return userdao;
-    }
-
     @Override
     public int insert(userDTO userdto) throws SQLException{
         Connection conn = null;

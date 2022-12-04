@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import Controller.userController;
 import DAO.userDAOImpl;
@@ -7,7 +8,6 @@ import DTO.userDTO;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-
 
         Scanner scan = new Scanner(System.in);
 
@@ -35,7 +35,11 @@ public class Main {
                 userController.ActionUserDelete();
             }else if(menu == 4){
                 userController.ActionUserShow();
-                userController.ActionUserSelect();
+                String unameTemp = userController.ActionUserSelect();
+                if(!Objects.equals(unameTemp, "no")){
+                    interestMain.userInterestMain(unameTemp);
+                }
+
             }
         }while(true);
 
