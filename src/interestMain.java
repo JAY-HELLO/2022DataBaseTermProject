@@ -26,10 +26,9 @@ public class interestMain {
             }else if(menu == 1){
                 uinterestController.ActionUinterestShow(uname);
             }else if(menu ==2){
-
+                uinterestController.ActionUinterestInsert(uname);
             }else if(menu ==3){
                 uinterestController.ActionUinterestShow(uname);
-
                 uinterestController.ActionUinterestDelete(uname);
             }
         }while(true);

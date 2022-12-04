@@ -66,6 +66,20 @@ public class uinterestDAOImpl implements uinterestDAO {
 
     @Override
     public int Insert(uinterestDTO uidto) throws SQLException {
-        return 0;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        int ret = 0;
+        try{
+            conn = uComm.getConnection();
+            String sql = "insert into uinterest (uname, scode, scomment) values (?, ?, ?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,uidto.getUname());
+            pstmt.setInt(2,uidto.getScode());
+            pstmt.setString(3,uidto.getScomment());
+            ret = pstmt.executeUpdate();
+        }finally{
+            uComm.close(pstmt, conn);
+        }
+        return ret;
     }
 }
