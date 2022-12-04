@@ -11,6 +11,6 @@ public interface siinformationDAO {
 
     List<SiiSiDTO> sinformationJoin() throws SQLException;
 
-    List<SiiUiDTO> uinterestJoin() throws  SQLException;
+    List<SiiUiDTO> uinterestJoin(String uname) throws  SQLException;
 
 }

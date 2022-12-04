@@ -28,10 +28,10 @@ public class siinformationController {
         }
 
     }
-    public static void ActionUinformationJoin()throws SQLException {
+    public static void ActionUinformationJoin(String uname)throws SQLException {
         siinformationDAOImpl siidimpl = new siinformationDAOImpl();
 
-        List<SiiUiDTO> result = siidimpl.uinterestJoin();
+        List<SiiUiDTO> result = siidimpl.uinterestJoin(uname);
         for(SiiUiDTO j:result){
             System.out.print(" || 종목코드 : "+j.getScode());
             System.out.print(" || 종목명 : "+j.getSname());

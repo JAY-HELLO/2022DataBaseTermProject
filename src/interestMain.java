@@ -30,7 +30,7 @@ public class interestMain {
             }else if(menu ==2) {
                 uinterestController.ActionUinterestInsert(uname);
             }else if(menu ==3){
-                siinformationController.ActionUinformationJoin();
+                siinformationController.ActionUinformationJoin(uname);
             }
             else if(menu ==4){
                 uinterestController.ActionUinterestSelect(uname);

@@ -47,7 +47,7 @@ public class siinformationDAOImpl implements siinformationDAO{
     //사용자 관심종목과 stock invest information과의 join
 
     @Override
-    public List<SiiUiDTO> uinterestJoin() throws SQLException {
+    public List<SiiUiDTO> uinterestJoin(String uname) throws SQLException {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -57,7 +57,7 @@ public class siinformationDAOImpl implements siinformationDAO{
             conn = uComm.getConnection();
             String sql = "select * " +
                     "from uinterest u, sinformation s, siinformation si " +
-                    "where s.scode = si.scode and u.scode = s.scode";
+                    "where u.uname = '"+uname+"' and s.scode = si.scode and u.scode = s.scode";
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
             while(rs.next()){

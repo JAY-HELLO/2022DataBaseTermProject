@@ -42,10 +42,16 @@ public class uinterestController {
         String scomment = null;
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("추가할 종목 코드를 입력하세요 : ");
-        scode = Integer.parseInt(scan.nextLine());
-        System.out.println("추가할 종목 코멘트를 입력하세요 : ");
-        scomment = scan.nextLine();
+        try{
+            System.out.println("추가할 종목 코드를 입력하세요 : ");
+            scode = Integer.parseInt(scan.nextLine());
+            System.out.println("추가할 종목 코멘트를 입력하세요 : ");
+            scomment = scan.nextLine();
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("다시 정확히 입력하세요 : ");
+        }
+
 
         uidto.setUname(uname);
         uidto.setScode(scode);
