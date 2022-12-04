@@ -25,7 +25,7 @@ public class uinterestDAOImpl implements uinterestDAO {
         List<uinterestDTO> list = new ArrayList<>();
         try{
             conn = uComm.getConnection();
-            String sql = "select * from uinterest";
+            String sql = "select * from uinterest where uname ='"+uname+"';";
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
 
@@ -42,12 +42,30 @@ public class uinterestDAOImpl implements uinterestDAO {
     }
 
     @Override
-    public int Delete(uinterestDTO userDTO) throws SQLException {
-        return 0;
+    public boolean Delete(String uname,int scode) throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        boolean bool=false;
+        int ret=0;
+
+        try{
+            conn = uComm.getConnection();
+            String sql = "delete from uinterest where uname = '"+uname+"' and scode = '"+scode+"';";
+            pstmt = conn.prepareStatement(sql);
+            ret = pstmt.executeUpdate();
+            bool = true;
+        }catch (Exception e){
+            e.printStackTrace();
+            bool = false;
+        }
+        finally{
+            uComm.close(pstmt, conn);
+        }
+        return bool;
     }
 
     @Override
-    public int Insert(uinterestDTO userDTO) throws SQLException {
+    public int Insert(uinterestDTO uidto) throws SQLException {
         return 0;
     }
 }

@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface uinterestDAO {
     List<uinterestDTO> selectAll(String uname) throws SQLException;
-    int Delete(uinterestDTO userDTO) throws  SQLException;
-    int Insert(uinterestDTO userDTO) throws SQLException;
+    boolean Delete(String uname, int scode) throws  SQLException;
+    int Insert(uinterestDTO uidto) throws SQLException;
 }

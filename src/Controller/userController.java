@@ -44,7 +44,6 @@ public class userController {
         System.out.print("삭제할 사용자 이름을 입력하세요: \n");
         uname = scan.nextLine();
         udto.setUname(uname);
-
         dimpl.delete(udto);
     }
     public static String ActionUserSelect() throws SQLException{

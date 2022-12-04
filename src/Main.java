@@ -39,11 +39,7 @@ public class Main {
                 if(!Objects.equals(unameTemp, "no")){
                     interestMain.userInterestMain(unameTemp);
                 }
-
             }
         }while(true);
-
     }
-
-
 }

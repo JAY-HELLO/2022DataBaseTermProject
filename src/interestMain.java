@@ -25,6 +25,12 @@ public class interestMain {
                 break;
             }else if(menu == 1){
                 uinterestController.ActionUinterestShow(uname);
+            }else if(menu ==2){
+
+            }else if(menu ==3){
+                uinterestController.ActionUinterestShow(uname);
+
+                uinterestController.ActionUinterestDelete(uname);
             }
         }while(true);
 

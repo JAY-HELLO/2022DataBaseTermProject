@@ -44,6 +44,8 @@ public class userDAOImpl implements userDAO{
             String sql = "select * from user";
             pstmt = conn.prepareStatement(sql);
 
+            //execute query() 반환값이 있을때
+            //execute Update() 반환값이 없을때.
             rs = pstmt.executeQuery();
             while(rs.next()){
                 userDTO userdto = new userDTO();
@@ -60,6 +62,7 @@ public class userDAOImpl implements userDAO{
     public int delete(userDTO userdto) throws SQLException{
         Connection conn = null;
         PreparedStatement pstmt = null;
+        ResultSet rs = null;
         int ret = 0;
         try{
             conn = uComm.getConnection();
@@ -71,15 +74,6 @@ public class userDAOImpl implements userDAO{
             uComm.close(pstmt, conn);
         }
         return ret;
-    }
-    public int userSelect(userDTO userdto) throws SQLException{
-        //사용자를 선택하면 해당 테이블에 사용자가 있는지 확인하고
-        //사용자가 없다면 사용자에 해당하는 record를 생성하고
-        //사용자가 있다면 생성하지 않고 사용자 이름을 갖고 있는다.
-        int ret = 0;
-
-        return ret;
-
     }
     @Override
     public boolean findUser(String Uname) throws SQLException{
