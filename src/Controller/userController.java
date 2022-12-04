@@ -20,7 +20,7 @@ public class userController {
         System.out.println("사용자에 대한 설명을 등록하세요 : ");
         comment = scan.nextLine();
 
-        udto.setName(uname);
+        udto.setUname(uname);
         udto.setComment(comment);
 
         dimpl.insert(udto);
@@ -28,9 +28,9 @@ public class userController {
     public static void ActionUserShow() throws SQLException {
         userDAOImpl dimpl = new userDAOImpl();
         List<userDTO> result;
-        result = dimpl.select();
+        result = dimpl.selectAll();
         for(userDTO i:result){
-            System.out.print("|| 사용자 이름 : "+i.getName());
+            System.out.print("|| 사용자 이름 : "+i.getUname());
             System.out.print(" || 사용자 설명 : "+i.getComment());
             System.out.println("\n");
         }
@@ -43,12 +43,20 @@ public class userController {
         String uname;
         System.out.print("삭제할 사용자 이름을 입력하세요: \n");
         uname = scan.nextLine();
-        udto.setName(uname);
+        udto.setUname(uname);
 
         dimpl.delete(udto);
     }
     public static void ActionUserSelect() throws SQLException{
         System.out.print("원하는 사용자를 선택하세요 : \n");
+        Scanner scan = new Scanner(System.in);
+        String uname = scan.nextLine();
+        userDAOImpl dimpl = new userDAOImpl();
+        if(dimpl.findUser(uname)){
+            System.out.println(uname + "사용자가 선택되었습니다.");
+        }else{
+            System.out.println("찾으시는 사용자가 없습니다.");
+        }
 
     }
 }

@@ -3,7 +3,14 @@ package DTO;
 //DTO는 데이터 를실어나르는 객체
 //2018038006 이정주
 public class userDTO {
-    private String name;
+    private String uname;
+
+    public String getUname() {
+        return uname;
+    }
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
     private String comment;
 
     public String getComment() {
@@ -12,15 +19,6 @@ public class userDTO {
 
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
 
