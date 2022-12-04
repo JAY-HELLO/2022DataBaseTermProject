@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class uinterestController {
-    public static void ActionUinterestShow(String uname) throws SQLException {
+    public static void ActionUinterestSelect(String uname) throws SQLException {
 
         uinterestDAOImpl uidimpl = new uinterestDAOImpl();
 

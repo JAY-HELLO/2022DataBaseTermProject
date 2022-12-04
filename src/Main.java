@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import Controller.userController;
+import Controller.sinformactionController;
 import DAO.userDAOImpl;
 import DTO.userDTO;
 
@@ -20,6 +21,8 @@ public class Main {
             System.out.println("2. 사용자 목록보기");
             System.out.println("3. 사용자 삭제");
             System.out.println("4. 사용자 선택");
+            System.out.println("5. 모든 종목 보기");
+            System.out.println("6. 모든 종목 투자 정보 보기");
             System.out.println("#################################################");
 
             menu = Integer.parseInt(scan.nextLine());
@@ -39,6 +42,10 @@ public class Main {
                 if(!Objects.equals(unameTemp, "no")){
                     interestMain.userInterestMain(unameTemp);
                 }
+            }else if(menu == 5){
+                sinformactionController.ActionSinformationSelectAll();;
+            }else if(menu ==6){
+
             }
         }while(true);
     }

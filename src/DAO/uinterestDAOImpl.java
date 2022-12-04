@@ -1,6 +1,5 @@
 package DAO;
 import DTO.uinterestDTO;
-import DTO.userDTO;
 import dbconnect.userCommon;
 
 import java.sql.Connection;
@@ -13,7 +12,6 @@ import java.util.List;
 public class uinterestDAOImpl implements uinterestDAO {
 
     private userCommon uComm = userCommon.getInstance();
-    private static uinterestDAO useridao = new uinterestDAOImpl();
 
     @Override
     public List<uinterestDTO> selectAll(String uname) throws SQLException {
