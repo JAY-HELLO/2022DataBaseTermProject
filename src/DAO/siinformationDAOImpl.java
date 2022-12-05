@@ -62,7 +62,6 @@ public class siinformationDAOImpl implements siinformationDAO{
             rs = pstmt.executeQuery();
             while(rs.next()){
                 SiiUiDTO siiuidto = new SiiUiDTO();
-
                 siiuidto.setScode(rs.getInt("scode"));
                 siiuidto.setSname(rs.getString("sname"));
                 siiuidto.setSmarket(rs.getString("smarket"));
@@ -71,7 +70,6 @@ public class siinformationDAOImpl implements siinformationDAO{
                 siiuidto.setDps(rs.getInt("dps"));
                 siiuidto.setPer(rs.getInt("per"));
                 siiuidto.setSyear(rs.getString("syear"));
-
                 list.add(siiuidto);
             }
         }finally{
