@@ -4,3 +4,4 @@
 > - 사용자가 원하는 주식 종목을 관심종목으로 만들어 투자정보를 확인할 수 있게 하는 프로젝트 입니다.
 > - .sql 파일을 사용해 stock invest information (siinformation table) 과 stock information (sinformation table)을 제작할 수 있습니다.
 > - 본 sql파일은 기 생성한 table에 주식 데이터를 넣기 위한 sql 파일 입니다.
+> - 실행사진은 깃허브 내의 스크린샷.png를 참고 바랍니다.
